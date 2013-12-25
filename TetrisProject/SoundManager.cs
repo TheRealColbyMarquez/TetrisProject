@@ -18,7 +18,7 @@ namespace TetrisDemo
         {
             try
             {
-                gameMusic = content.Load<Song>("gameMusic.wav");
+                gameMusic = content.Load<Song>("gameMusic");
             }
             catch
             {
@@ -28,7 +28,7 @@ namespace TetrisDemo
 
         public static void PlayGameMusic()
         {
-            //MediaPlayer.Play(gameMusic);
+            MediaPlayer.Play(gameMusic);
         }
 
     }

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
@@ -22,7 +22,7 @@ namespace TetrisDemo
         OFFSCREEN
     }
 
-    enum GameStates { TitleScreen, Playing, GameOver };
+    enum GameStates { TitleScreen, Playing, GameOver, Controls};
 
     /// <summary>
     /// This is the main type for your game
@@ -40,10 +40,13 @@ namespace TetrisDemo
         Texture2D titleScreen;
         Texture2D gamebackground;
         Texture2D mainbackground;
+        Texture2D optionsMenu;
+        Texture2D controlsMenu;
         Rectangle mainFrame;
         Texture2D spriteSheet;
         Score score;
         SpriteFont pericles14;
+        Song song;
 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -101,6 +104,7 @@ namespace TetrisDemo
             ElapsedTime = 0;
 
             score = new Score();
+            
         }
 
         /// <summary>
@@ -111,6 +115,8 @@ namespace TetrisDemo
         /// </summary>
         protected override void Initialize()
         {
+            this.IsMouseVisible = true;
+
             pieces = new List<int[,]>();
 
             /* I Piece */
@@ -182,13 +188,15 @@ namespace TetrisDemo
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-
             // TODO: use this.Content to load your game content here
             spriteSheet = Content.Load<Texture2D>(@"TetrisSprites");
             titleScreen = Content.Load<Texture2D>(@"tetristitle17");
             pericles14 = Content.Load<SpriteFont>("Pericles14");
             mainbackground = Content.Load<Texture2D>("mainbackground");
             gamebackground = Content.Load<Texture2D>("gamebackground");
+            optionsMenu = Content.Load<Texture2D>("optionsMenu");
+            controlsMenu = Content.Load<Texture2D>("controlsMenu");
+            song = Content.Load<Song>("gameMusic");
             mainFrame = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
 
 
@@ -385,17 +393,46 @@ namespace TetrisDemo
 
             if (gameState == GameStates.TitleScreen)
             {
+                if (ks.IsKeyDown(Keys.Q))
+                {
+                    this.Exit();
+                }
+
                 if (ks.IsKeyDown(Keys.Space))
                 {
+                    MediaPlayer.Play(song);
                     gameState = GameStates.Playing;
                     myStopWatch.Start();
-                    SoundManager.Initialize(Content);
-                    SoundManager.PlayGameMusic();
+                    MediaPlayer.Play(song);
+                    InitializeBoard(Board);
+                    SpawnPiece();
+                    SpawnPiece();
+                    gameState = GameStates.Playing;
+
+                    score.PlayerLevel = 0;
+                    score.PlayerLines = 0;
+                    score.PlayerScore = 0;
                 }
             }
             else if (gameState == GameStates.Playing)
             {
-                
+                if (ks.IsKeyDown(Keys.C))
+                {
+                    gameState = GameStates.Controls;
+                }
+                if (ks.IsKeyDown(Keys.Escape))
+                {
+                    gameState = GameStates.TitleScreen;
+                    MediaPlayer.Stop();
+                    myStopWatch.Reset();
+                }
+
+                if (ks.IsKeyDown(Keys.S))
+                {
+                    MediaPlayer.Stop();
+                    MediaPlayer.Play(song);
+
+                }
 
                 if (ks.IsKeyDown(Keys.Q))
                 {
@@ -404,6 +441,11 @@ namespace TetrisDemo
 
                 if (ks.IsKeyDown(Keys.R) && myStopWatch.Elapsed.Seconds >= 1)
                 {
+                    if (gameState == GameStates.Playing)
+                    {
+                        MediaPlayer.Stop();
+                        MediaPlayer.Play(song);
+                    }
                     InitializeBoard(Board);
                     SpawnPiece();
                     SpawnPiece();
@@ -505,11 +547,72 @@ namespace TetrisDemo
 
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            if (gameState == GameStates.TitleScreen)
+            if (gameState == GameStates.Controls)
             {
+                KeyboardState ks = Keyboard.GetState();
+                if (ks.IsKeyDown(Keys.G))
+                {
+                    gameState = GameStates.Playing;
+                    MediaPlayer.Resume();
+                }
+                if (ks.IsKeyDown(Keys.Escape))
+                {
+                    gameState = GameStates.TitleScreen;
+                    myStopWatch.Reset();
+                }
                 spriteBatch.Begin();
-                spriteBatch.Draw(mainbackground, mainFrame, Color.White);
+                spriteBatch.Draw(controlsMenu, mainFrame, Color.White);
+
+                spriteBatch.DrawString(
+                    pericles14,
+                    "Up Arrow - Rotate Block",
+                    new Vector2(240, 75),
+                    Color.White);
+                spriteBatch.DrawString(
+                    pericles14,
+                    "Down Arrow - Fast Drop",
+                    new Vector2(240, 100),
+                    Color.White);
+                spriteBatch.DrawString(
+                    pericles14,
+                    "Left Arrow - Move Block Left",
+                    new Vector2(240, 125),
+                    Color.White);
+                spriteBatch.DrawString(
+                    pericles14,
+                    "Right Arrow - Move Block Right",
+                    new Vector2(240, 150),
+                    Color.White);
+                
+                spriteBatch.DrawString(
+                    pericles14,
+                    "ESC - Return to Menu",
+                    new Vector2(240, 175),
+                    Color.White);
+                spriteBatch.DrawString(
+                    pericles14,
+                    "G - Return to Game",
+                    new Vector2(240, 275),
+                    Color.White);
+                spriteBatch.DrawString(
+                    pericles14,
+                    "S - Replay Song",
+                    new Vector2(240, 200),
+                    Color.White);
+                spriteBatch.DrawString(
+                    pericles14,
+                    "Q - Quit Game",
+                    new Vector2(240, 225),
+                    Color.White);
+                
+                spriteBatch.DrawString(
+                    pericles14,
+                    "R - Restart Game",
+                    new Vector2(240, 250),
+                    Color.White);
                 spriteBatch.End();
+
+                
             }
 
 
@@ -517,8 +620,9 @@ namespace TetrisDemo
 
             if (gameState == GameStates.TitleScreen)
             {
+                spriteBatch.Draw(mainbackground, mainFrame, Color.White);
                 spriteBatch.Draw(titleScreen, titleScreenLocation, Color.White);
-
+                
                 spriteBatch.DrawString(
                     pericles14,
                     "P R E S S  S P A C E  T O  C O N T I N U E",
@@ -573,15 +677,11 @@ namespace TetrisDemo
                         }
                     }
                 spriteBatch.Draw(gamebackground, mainFrame, Color.White);
-
-                if (score.PlayerScore >= 0)
-                {
                     spriteBatch.DrawString(
                         pericles14,
                         "Score: " + score.PlayerScore.ToString(),
                         scoreLocation,
                         Color.White);
-                }
 
 
                 spriteBatch.DrawString(
@@ -595,47 +695,41 @@ namespace TetrisDemo
                     "Time: " + myStopWatch.Elapsed.Hours + ":" + myStopWatch.Elapsed.Minutes + ":" + myStopWatch.Elapsed.Seconds.ToString(),
                     elapsedhoursLocation,
                     Color.White);
-
                 spriteBatch.DrawString(
-                pericles14,
-                "Press Q to quit",
-                new Vector2(525, 250),
-                Color.White);
+                    pericles14,
+                    ("Lines: ") + score.PlayerLines.ToString(),
+                    linesLocation,
+                    Color.White);
 
                 spriteBatch.DrawString(
                     pericles14,
-                    "Press R to restart",
-                    new Vector2(525, 275),
+                    ("Level: ") + score.PlayerLevel.ToString(),
+                    levelLocation,
                     Color.White);
-
-
-                
-                if (score.PlayerLines >= 0)
-                {
-                    spriteBatch.DrawString(
-                        pericles14,
-                       ("Lines: ") + score.PlayerLines.ToString(),
-                        linesLocation,
-                        Color.White);
-                }
-
-                if (score.PlayerLevel >= 0)
-                {
-                    spriteBatch.DrawString(
-                        pericles14,
-                        ("Level: ") + score.PlayerLevel.ToString(),
-                        levelLocation,
-                        Color.White);
-                }
+                spriteBatch.DrawString(
+                    pericles14,
+                    "Press C for Control List",
+                    new Vector2(520, 250),
+                    Color.White);
             }
 
             else if ((gameState == GameStates.GameOver))
             {
+
                 myStopWatch.Stop();
                 KeyboardState ks = Keyboard.GetState();
 
-                spriteBatch.Draw(gamebackground, mainFrame, Color.White);
+                if (ks.IsKeyDown(Keys.S))
+                {
+                    MediaPlayer.Stop();
+                    MediaPlayer.Play(song);
+                }
 
+                spriteBatch.Draw(gamebackground, mainFrame, Color.White);
+                if (ks.IsKeyDown(Keys.C))
+                {
+                    gameState = GameStates.Controls;
+                }
                 spriteBatch.DrawString(
                     pericles14,
                     "G A M E  O V E R !",
@@ -659,12 +753,6 @@ namespace TetrisDemo
 
                 spriteBatch.DrawString(
                 pericles14,
-                "Press Q to quit",
-                new Vector2(525, 250),
-                Color.White);
-
-                spriteBatch.DrawString(
-                pericles14,
                 "Next Piece ",
                 new Vector2(540, 125),
                 Color.White);
@@ -683,8 +771,8 @@ namespace TetrisDemo
 
                 spriteBatch.DrawString(
                     pericles14,
-                    "Press R to restart",
-                    new Vector2(525, 275),
+                    "Press C for Control List",
+                    new Vector2(520, 250),
                     Color.White);
 
                 if (ks.IsKeyDown(Keys.Q))
@@ -692,8 +780,16 @@ namespace TetrisDemo
                     this.Exit();
                 }
 
+                if (ks.IsKeyDown(Keys.Escape))
+                {
+                    gameState = GameStates.TitleScreen;
+                    MediaPlayer.Stop();
+                    myStopWatch.Reset();
+                }
+
                 if (ks.IsKeyDown(Keys.R) && myStopWatch.Elapsed.Seconds >= 1)
                 {
+                    MediaPlayer.Play(song);
                     InitializeBoard(Board);
                     SpawnPiece();
                     SpawnPiece();
@@ -702,6 +798,8 @@ namespace TetrisDemo
                     score.PlayerLevel = 0;
                     score.PlayerLines = 0;
                     score.PlayerScore = 0;
+
+                    
 
                     myStopWatch.Restart();
 

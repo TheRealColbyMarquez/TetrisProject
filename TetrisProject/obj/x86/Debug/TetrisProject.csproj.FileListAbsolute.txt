@@ -1,0 +1,26 @@
+C:\Users\Colby\Documents\Visual Studio 2010\Projects\TetrisProject\TetrisProject\TetrisProject\obj\x86\Debug\TetrisProject.csprojResolveAssemblyReference.cache
+C:\Users\Colby\Documents\Visual Studio 2010\Projects\TetrisProject\TetrisProject\TetrisProject\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Colby\Documents\Visual Studio 2010\Projects\TetrisProject\TetrisProject\TetrisProject\bin\x86\Debug\Content\TetrisSprites.xnb
+C:\Users\Colby\Documents\Visual Studio 2010\Projects\TetrisProject\TetrisProject\TetrisProject\bin\x86\Debug\Content\tetristitle17.xnb
+C:\Users\Colby\Documents\Visual Studio 2010\Projects\TetrisProject\TetrisProject\TetrisProject\bin\x86\Debug\Content\gamebackground.xnb
+C:\Users\Colby\Documents\Visual Studio 2010\Projects\TetrisProject\TetrisProject\TetrisProject\bin\x86\Debug\Content\mainbackground.xnb
+C:\Users\Colby\Documents\Visual Studio 2010\Projects\TetrisProject\TetrisProject\TetrisProject\bin\x86\Debug\Content\Pericles14.xnb
+C:\Users\Colby\Documents\Visual Studio 2010\Projects\TetrisProject\TetrisProject\TetrisProject\bin\x86\Debug\TetrisProject.exe
+C:\Users\Colby\Documents\Visual Studio 2010\Projects\TetrisProject\TetrisProject\TetrisProject\bin\x86\Debug\TetrisProject.pdb
+C:\Users\Colby\Documents\Visual Studio 2010\Projects\TetrisProject\TetrisProject\TetrisProject\obj\x86\Debug\TetrisProject.exe
+C:\Users\Colby\Documents\Visual Studio 2010\Projects\TetrisProject\TetrisProject\TetrisProject\obj\x86\Debug\TetrisProject.pdb
+C:\Users\Colby\Desktop\TetrisProjectBackup\TetrisProject\TetrisProject\TetrisProject\TetrisProject\bin\x86\Debug\Content\TetrisSprites.xnb
+C:\Users\Colby\Desktop\TetrisProjectBackup\TetrisProject\TetrisProject\TetrisProject\TetrisProject\bin\x86\Debug\Content\tetristitle17.xnb
+C:\Users\Colby\Desktop\TetrisProjectBackup\TetrisProject\TetrisProject\TetrisProject\TetrisProject\bin\x86\Debug\Content\mainbackground.xnb
+C:\Users\Colby\Desktop\TetrisProjectBackup\TetrisProject\TetrisProject\TetrisProject\TetrisProject\bin\x86\Debug\Content\gamebackground.xnb
+C:\Users\Colby\Desktop\TetrisProjectBackup\TetrisProject\TetrisProject\TetrisProject\TetrisProject\bin\x86\Debug\Content\Pericles14.xnb
+C:\Users\Colby\Desktop\TetrisProjectBackup\TetrisProject\TetrisProject\TetrisProject\TetrisProject\bin\x86\Debug\TetrisProject.exe
+C:\Users\Colby\Desktop\TetrisProjectBackup\TetrisProject\TetrisProject\TetrisProject\TetrisProject\bin\x86\Debug\TetrisProject.pdb
+C:\Users\Colby\Desktop\TetrisProjectBackup\TetrisProject\TetrisProject\TetrisProject\TetrisProject\obj\x86\Debug\TetrisProject.csprojResolveAssemblyReference.cache
+C:\Users\Colby\Desktop\TetrisProjectBackup\TetrisProject\TetrisProject\TetrisProject\TetrisProject\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Colby\Desktop\TetrisProjectBackup\TetrisProject\TetrisProject\TetrisProject\TetrisProject\obj\x86\Debug\TetrisProject.exe
+C:\Users\Colby\Desktop\TetrisProjectBackup\TetrisProject\TetrisProject\TetrisProject\TetrisProject\obj\x86\Debug\TetrisProject.pdb
+C:\Users\Colby\Desktop\TetrisProjectBackup\TetrisProject\TetrisProject\TetrisProject\TetrisProject\bin\x86\Debug\Content\optionsMenu.xnb
+C:\Users\Colby\Desktop\TetrisProjectBackup\TetrisProject\TetrisProject\TetrisProject\TetrisProject\bin\x86\Debug\Content\gameMusic.xnb
+C:\Users\Colby\Desktop\TetrisProjectBackup\TetrisProject\TetrisProject\TetrisProject\TetrisProject\bin\x86\Debug\Content\gameMusic.wma
+C:\Users\Colby\Desktop\TetrisProjectBackup\TetrisProject\TetrisProject\TetrisProject\TetrisProject\bin\x86\Debug\Content\controlsMenu.xnb

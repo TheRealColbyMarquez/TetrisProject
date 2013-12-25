@@ -117,7 +117,7 @@
     <Content Include="Game.ico" />
     <Content Include="gameMusic.wav" />
     <Content Include="GameThumbnail.png" />
-    <Content Include="song.mp3" />
+    <Content Include="optionsMenu.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TetrisProjectContent\TetrisProjectContent.contentproj">
