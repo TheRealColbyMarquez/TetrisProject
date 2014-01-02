@@ -2,8 +2,8 @@ Content\TetrisSprites.xnb
 Content\tetristitle17.xnb
 Content\mainbackground.xnb
 Content\gamebackground.xnb
-Content\Pericles14.xnb
 Content\optionsMenu.xnb
+Content\controlsMenu.xnb
+Content\Pericles14.xnb
 Content\gameMusic.xnb
 Content\gameMusic.wma
-Content\controlsMenu.xnb
