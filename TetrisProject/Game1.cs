@@ -604,6 +604,11 @@ namespace TetrisDemo
                     "Q - Quit Game",
                     new Vector2(240, 225),
                     Color.White);
+ //               spriteBatch.DrawString(
+ //                  pericles14,
+ //                   "Space Key - Hard Drop",
+ //                   new Vector2(240, 300),
+ //                   Color.White);
                 
                 spriteBatch.DrawString(
                     pericles14,
@@ -611,7 +616,6 @@ namespace TetrisDemo
                     new Vector2(240, 250),
                     Color.White);
                 spriteBatch.End();
-
                 
             }
 
