@@ -427,6 +427,13 @@ namespace TetrisDemo
                     myStopWatch.Reset();
                 }
 
+                if (ks.IsKeyDown(Keys.Space))
+                {
+                    ElapsedTime = StepTime + 5;
+                    KeyBoardElapsedTime = 100;
+                    score.PlayerScore += 3;
+                }
+
                 if (ks.IsKeyDown(Keys.S))
                 {
                     MediaPlayer.Stop();
@@ -604,11 +611,11 @@ namespace TetrisDemo
                     "Q - Quit Game",
                     new Vector2(240, 225),
                     Color.White);
- //               spriteBatch.DrawString(
- //                  pericles14,
- //                   "Space Key - Hard Drop",
- //                   new Vector2(240, 300),
- //                   Color.White);
+                spriteBatch.DrawString(
+                   pericles14,
+                    "Space Key - Fast Drop",
+                    new Vector2(240, 300),
+                    Color.White);
                 
                 spriteBatch.DrawString(
                     pericles14,
