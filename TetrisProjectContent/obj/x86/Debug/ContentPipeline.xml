@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\eahscs\Documents\GitHub\TetrisProject\TetrisProject\bin\x86\Debug\Content\TetrisSprites.xnb</Output>
-      <Time>2014-01-14T10:26:53.1508-05:00</Time>
+      <Time>2014-01-27T07:37:20.352-05:00</Time>
     </Item>
     <Item>
       <Source>tetristitle17.png</Source>
@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\eahscs\Documents\GitHub\TetrisProject\TetrisProject\bin\x86\Debug\Content\tetristitle17.xnb</Output>
-      <Time>2014-01-14T10:26:57.1738-05:00</Time>
+      <Time>2014-01-27T07:37:23.579-05:00</Time>
     </Item>
     <Item>
       <Source>mainbackground.png</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\eahscs\Documents\GitHub\TetrisProject\TetrisProject\bin\x86\Debug\Content\mainbackground.xnb</Output>
-      <Time>2014-01-14T10:26:56.8498-05:00</Time>
+      <Time>2014-01-27T07:37:23.574-05:00</Time>
     </Item>
     <Item>
       <Source>gamebackground.png</Source>
@@ -35,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\eahscs\Documents\GitHub\TetrisProject\TetrisProject\bin\x86\Debug\Content\gamebackground.xnb</Output>
-      <Time>2014-01-14T10:26:56.8398-05:00</Time>
+      <Time>2014-01-27T07:37:23.567-05:00</Time>
     </Item>
     <Item>
       <Source>optionsMenu.png</Source>
@@ -44,7 +44,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\eahscs\Documents\GitHub\TetrisProject\TetrisProject\bin\x86\Debug\Content\optionsMenu.xnb</Output>
-      <Time>2014-01-14T10:26:57.1708-05:00</Time>
+      <Time>2014-01-27T07:37:23.577-05:00</Time>
     </Item>
     <Item>
       <Source>controlsMenu.png</Source>
@@ -53,7 +53,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\eahscs\Documents\GitHub\TetrisProject\TetrisProject\bin\x86\Debug\Content\controlsMenu.xnb</Output>
-      <Time>2014-01-14T10:26:53.1518-05:00</Time>
+      <Time>2014-01-27T07:37:20.353-05:00</Time>
     </Item>
     <Item>
       <Source>Pericles14.spritefont</Source>
@@ -62,7 +62,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\eahscs\Documents\GitHub\TetrisProject\TetrisProject\bin\x86\Debug\Content\Pericles14.xnb</Output>
-      <Time>2014-01-14T10:26:53.1288-05:00</Time>
+      <Time>2014-01-27T07:37:20.351-05:00</Time>
     </Item>
     <Item>
       <Source>gameMusic.wav</Source>
@@ -72,7 +72,7 @@
       <Options>None</Options>
       <Output>C:\Users\eahscs\Documents\GitHub\TetrisProject\TetrisProject\bin\x86\Debug\Content\gameMusic.xnb</Output>
       <Extra>C:\Users\eahscs\Documents\GitHub\TetrisProject\TetrisProject\bin\x86\Debug\Content\gameMusic.wma</Extra>
-      <Time>2014-01-14T10:26:56.7978-05:00</Time>
+      <Time>2014-01-27T07:37:23.561-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
